@@ -1,11 +1,22 @@
 from setuptools import setup
+from Cython.Build import cythonize
+from os import walk
+
+# pyx_files = [f"yaml_illuminate/{f}" for _, _, files in walk("yaml_illuminate") for f in files if ".py" in f if "__" not in f]
+
+py_modules_to_convert = [
+    # "yaml_illuminate/loader.py",
+    "yaml_illuminate/marked_exception.py",
+    "yaml_illuminate/meta_loader.py",
+    "yaml_illuminate/objmaker.py"
+]
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
     name="yaml_illuminate",
-    version="1.0",
+    version="1.1",
     description="Yaml file loader, with additional metadata, like yaml object location",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -23,4 +34,5 @@ setup(
     ],
     python_requires='>=3.6',
     platform="any",
+    ext_modules = cythonize(py_modules_to_convert)
 )
