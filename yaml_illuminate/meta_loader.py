@@ -56,8 +56,8 @@ class MLoader(
         type_redefiner = AbsTypes(self.mark_objects)
         if isinstance(node, MappingNode):
             self.flatten_mapping(node)
-        g: Dict[str, Any] = super().construct_mapping(node, deep=deep)
-        g: Dict[str, Any] = type_redefiner.add_node_attr(g, node)
+        g: AbsTypes.MarkedDict[str, Any] = super().construct_mapping(node, deep=deep)
+        g: AbsTypes.MarkedDict[str, Any] = type_redefiner.add_node_attr(g, node)
         if isinstance(node.value, Iterable):
             for i, key in enumerate(g):
                 g[key] = type_redefiner.add_node_attr(g[key], node.value[i][1])
