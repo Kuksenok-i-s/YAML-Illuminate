@@ -42,7 +42,7 @@ class GenericMarkedException(GenericException):
             return self.node.start_mark
 
     @staticmethod
-    def additional_error_locations(additional_nodes: Union[ScalarNode, SequenceNode, List[Union[ScalarNode, SequenceNode]]]) -> str:
+    def additional_error_locations(additional_nodes: Union[ScalarNode, SequenceNode, List[Union[ScalarNode, SequenceNode]]]) -> Union[str, List[str]]:
         if isinstance(additional_nodes, Iterable):
             return "Possible errors locations ".join([str(i.start_mark) for i in additional_nodes])
         else:

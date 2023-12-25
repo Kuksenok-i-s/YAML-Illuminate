@@ -1,7 +1,8 @@
 from pathlib import Path
 from typing import Union
 from yaml import ScalarNode, SequenceNode
-from yaml_illuminate.loader import MLoader, marked_load
+from yaml_illuminate.loader import marked_load
+from yaml_illuminate.meta_loader import MLoader
 from pprint import pprint
 
 
