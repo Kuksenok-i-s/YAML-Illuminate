@@ -1,14 +1,11 @@
-from setuptools import setup
+from setuptools import setup, Extension
 from Cython.Build import cythonize
-from os import walk
-
-# pyx_files = [f"yaml_illuminate/{f}" for _, _, files in walk("yaml_illuminate") for f in files if ".py" in f if "__" not in f]
 
 py_modules_to_convert = [
-    # "yaml_illuminate/loader.py",
-    "yaml_illuminate/marked_exception.py",
-    "yaml_illuminate/meta_loader.py",
-    "yaml_illuminate/objmaker.py"
+    # Extension("loader", ["yaml_illuminate/loader.py"]),
+    Extension("marked_exception", ["yaml_illuminate/marked_exception.py"]),
+    Extension("meta_loader",      ["yaml_illuminate/meta_loader.py"]),
+    Extension("objmaker",         ["yaml_illuminate/objmaker.py"])
 ]
 
 with open("README.md", "r", encoding="utf-8") as fh:
@@ -33,6 +30,6 @@ setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
-    platform="any",
+    platforms="any",
     ext_modules = cythonize(py_modules_to_convert)
 )
