@@ -1,0 +1,14 @@
+economic_scenario: Decrease
+changes:
+  - event: !Economic Recession
+    impact: Negative
+    description: Economic slowdown with decreased GDP growth and reduced consumer spending.
+  - event: Inflation Rate
+    impact: Positive
+    description: Lower inflation due to reduced demand and economic uncertainty.
+  - event: Stock Market
+    impact: Negative
+    description: Bearish market sentiment, resulting in lower stock prices.
+  - event: Unemployment Rate
+    impact: Positive
+    description: Increased unemployment as businesses cut jobs and reduce hiring.

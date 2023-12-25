@@ -1,0 +1,14 @@
+economic_scenario: Increase
+changes:
+  - event: Economic Growth
+    impact: Positive
+    description: Strong GDP growth due to increased consumer spending and business investments.
+  - event: Inflation Rate
+    impact: Negative
+    description: Rising inflation due to increased demand for goods and services.
+  - event: Stock Market
+    impact: Positive
+    description: Bullish market sentiment, leading to higher stock prices.
+  - event: Unemployment Rate
+    impact: Negative
+    description: Decreased unemployment as businesses expand and hire more workers.

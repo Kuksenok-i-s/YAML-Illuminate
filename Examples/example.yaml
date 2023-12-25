@@ -1,0 +1,30 @@
+economic_statistic: GDP
+economic_action: !include
+  - increase.yaml
+  - decrease.yaml
+Market Data:
+  market_name: Stock Exchange
+  market_index: NASDAQ
+  performance_indicator: stock_price
+  performance_goal: maximize
+
+Financial Strategy:
+  investment_strategy: long-term
+  investment_portfolio:
+    - stocks
+    - bonds
+  investment_horizon_years: 10
+
+Economic Targets:
+  countries:
+    [
+      "USA",
+      "China",
+      "India",
+      "Germany",
+      "Japan",
+      "Brazil",
+      "France",
+      "Canada",
+      "Australia",
+    ]
