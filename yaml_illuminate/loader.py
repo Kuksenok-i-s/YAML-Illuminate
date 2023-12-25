@@ -1,10 +1,10 @@
 import yaml
 import sys
-from pathlib import Path
 
-from typing import Any, Callable, Dict
+from typing import Callable, Dict, Any
 
 from yaml_illuminate.meta_loader import MLoader, ManifestWrapper
+
 
 
 def loader_decorator(constructors):
@@ -16,7 +16,7 @@ def loader_decorator(constructors):
         return AddLoaders
     return decorator
 
-def marked_load(stream, Loader, constructors:Dict[str, Callable]  = None, mark_objects: bool = True):
+def marked_load(stream, Loader, constructors:Dict[str, Callable]  = None, mark_objects: bool = True)->Any:
     @loader_decorator(constructors)
     class _Tmp(Loader):
         ...
