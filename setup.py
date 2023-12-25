@@ -2,7 +2,7 @@ from setuptools import setup, Extension
 from Cython.Build import cythonize
 
 py_modules_to_convert = [
-    # Extension("loader", ["yaml_illuminate/loader.py"]),
+    Extension("loader",           ["yaml_illuminate/loader.py"]),
     Extension("marked_exception", ["yaml_illuminate/marked_exception.py"]),
     Extension("meta_loader",      ["yaml_illuminate/meta_loader.py"]),
     Extension("objmaker",         ["yaml_illuminate/objmaker.py"])
